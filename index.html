@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment 7</title>
+    <link rel="stylesheet" href="style.css" class="stylesheet" />
+  </head>
+  <body>
+    <header class="page-header">
+      <h1>Mobile Store SPA</h1>
+      <p>Assignment 7: Frontend connecting to Assignment 6 backend REST API</p>
+
+      <main class="container">
+        <section class="card">
+          <h2>Customers</h2>
+
+          <h3>Create Customer</h3>
+          <div class="row">
+            <input type="text" id="title" placeholder="Mr, Mrs, Ms..." />
+            <input type="text" id="firstName" placeholder="First Name" />
+            <input type="text" id="surname" placeholder="Surname" />
+          </div>
+
+          <div class="row">
+            <input type="text" id="mobile" placeholder="Mobile" />
+            <input type="text" id="email" placeholder="Email" />
+          </div>
+
+          <div class="row">
+            <input
+              type="text"
+              id="homeAddressLine1"
+              placeholder="Address Line 1"
+            />
+            <input type="text" id="homeTown" placeholder="Town" />
+            <input type="text" id="homeCounty" placeholder="County" />
+          </div>
+
+          <div class="row">
+            <input
+              type="text"
+              id="shipAddressLine1"
+              placeholder="Address Line 1"
+            />
+            <input type="text" id="shipTown" placeholder="Town" />
+            <input type="text" id="shipCounty" placeholder="County" />
+          </div>
+
+          <div class="row">
+            <button id="btnCreateCustomer">Create Customer</button>
+          </div>
+
+          <h3>Update Customer</h3>
+          <div class="row">
+            <input
+              type="text"
+              id="updateCustomerId"
+              placeholder="Customer ID to update"
+            />
+          </div>
+
+          <div class="row">
+            <input
+              type="text"
+              id="updateFirstName"
+              placeholder="New First Name"
+            />
+            <input type="text" id="updateSurname" placeholder="New Surname" />
+          </div>
+
+          <div class="row">
+            <input type="text" id="updateMobile" placeholder="New Mobile" />
+            <input type="email" id="updateEmail" placeholder="New Email" />
+          </div>
+
+          <div class="row">
+            <button id="btnUpdateCustomer">Update Customer</button>
+          </div>
+
+          <h3>Delete Customer</h3>
+
+          <div class="row">
+            <input
+              type="text"
+              id="deleteCustomerId"
+              placeholder="Customer ID to delete"
+            />
+          </div>
+
+          <div class="row">
+            <button id="btnDeleteCustomer">Delete Customer</button>
+          </div>
+
+          <h3>Get All Customers</h3>
+          <div class="row">
+            <button id="btnGetCustomers">Get All Customers</button>
+          </div>
+
+          <h3>API Response</h3>
+          <pre id="customerOutput" class="output">
+Click "Get All Customers"...</pre
+          >
+        </section>
+
+        <section class="card">
+          <h2>Items</h2>
+
+          <h3>Create Item</h3>
+
+          <div class="row">
+            <input
+              type="text"
+              id="itemManufacturer"
+              placeholder="Item Manufacturer"
+            />
+            <input type="text" id="itemModel" placeholder="Item Model" />
+            <input type="number" id="itemPrice" placeholder="Price" />
+          </div>
+
+          <div class="row">
+            <button id="btnCreateItem">Create Item</button>
+          </div>
+
+          <h3>Update Item</h3>
+
+          <div class="row">
+            <input
+              type="text"
+              id="updateItemId"
+              placeholder="Item ID to update"
+            />
+          </div>
+
+          <div class="row">
+            <input
+              type="text"
+              id="updateItemManufacturer"
+              placeholder="New Item Manufacturer"
+            />
+            <input type="text" id="updateItemModel" placeholder="New Model" />
+            <input type="number" id="updateItemPrice" placeholder="New Price" />
+          </div>
+
+          <div class="row">
+            <button id="btnUpdateItem">Update Item</button>
+          </div>
+
+          <h3>Delete Item</h3>
+
+          <div class="row">
+            <input
+              type="text"
+              id="deleteItemId"
+              placeholder="Item ID to delete"
+            />
+          </div>
+
+          <div class="row">
+            <button id="btnDeleteItem">Delete Item</button>
+          </div>
+
+          <h3>Get All Items</h3>
+
+          <div class="row">
+            <button id="btnGetItems">Get All Items</button>
+          </div>
+
+          <h3>API Response</h3>
+          <pre id="itemOutput" class="output">Click "Get All Items"...</pre>
+        </section>
+
+        <section class="card">
+          <h2>Orders</h2>
+
+          <!-- CREATE ORDER -->
+          <h3>Create Order</h3>
+
+          <div class="row">
+            <input type="text" id="orderCustomerId" placeholder="Customer ID" />
+
+            <input
+              type="text"
+              id="orderItemIds"
+              placeholder="Item IDs (comma separated)"
+            />
+          </div>
+
+          <div class="row">
+            <button id="btnCreateOrder">Create Order</button>
+          </div>
+
+          <h3>Update Order</h3>
+
+          <div class="row">
+            <input
+              type="text"
+              id="updateOrderId"
+              placeholder="Order ID to update"
+            />
+
+            <input
+              type="text"
+              id="updateOrderCustomerId"
+              placeholder="New Customer ID (optional)"
+            />
+
+            <input
+              type="text"
+              id="updateOrderItemIds"
+              placeholder="New Item IDs (comma separated)"
+            />
+          </div>
+
+          <div class="row">
+            <button id="btnUpdateOrder">Update Order</button>
+          </div>
+
+          <!-- DELETE ORDER -->
+          <h3>Delete Order</h3>
+
+          <div class="row">
+            <input
+              type="text"
+              id="deleteOrderId"
+              placeholder="Order ID to delete"
+            />
+          </div>
+
+          <div class="row">
+            <button id="btnDeleteOrder">Delete Order</button>
+          </div>
+
+          <!-- GET ALL ORDERS -->
+          <h3>Get All Orders</h3>
+
+          <div class="row">
+            <button id="btnGetOrders">Get All Orders</button>
+          </div>
+
+          <h3>API Response</h3>
+          <pre id="orderOutput" class="output">Click "Get All Orders"...</pre>
+        </section>
+      </main>
+    </header>
+    <script src="app.js"></script>
+  </body>
+</html>
